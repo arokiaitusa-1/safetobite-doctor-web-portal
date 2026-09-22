@@ -1,0 +1,242 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Clinical Tables
+   ============================================================ */
+
+/* -----------------------------------------------
+   Table Wrapper (scroll container)
+----------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* -----------------------------------------------
+   Base Clinical Table
+----------------------------------------------- */
+.clinical-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--font-size-base);
+}
+
+/* Head */
+.clinical-table thead {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-raised);
+}
+
+.clinical-table thead tr {
+  background: var(--color-surface);
+}
+
+.clinical-table th {
+  padding: 12px 18px;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: #64748b;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.clinical-table th:first-child {
+  padding-left: 18px;
+}
+
+.clinical-table th:last-child {
+  padding-right: 18px;
+}
+
+/* Sortable header */
+.th-sortable {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.th-sortable .icon {
+  width: 12px;
+  height: 12px;
+  color: var(--color-text-muted);
+}
+
+.th-sortable:hover {
+  color: var(--color-text-primary);
+}
+
+/* Body */
+.clinical-table tbody tr {
+  background: var(--color-white);
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.clinical-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.clinical-table tbody tr:hover {
+  background: var(--color-surface);
+}
+
+.clinical-table tbody tr.row-selected {
+  background: var(--color-primary-surface);
+}
+
+.clinical-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--font-size-base);
+}
+
+.clinical-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.clinical-table td:first-child {
+  padding-left: 18px;
+}
+
+.clinical-table td:last-child {
+  padding-right: 18px;
+  text-align: right;
+}
+
+/* -----------------------------------------------
+   Patient Cell (avatar + name + ID)
+----------------------------------------------- */
+.patient-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 160px;
+}
+
+.patient-cell-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 4px;
+}
+
+.patient-cell-name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  white-space: normal;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  line-height: var(--line-height-tight);
+}
+
+.patient-cell-name:hover {
+  color: var(--color-primary);
+}
+
+.patient-cell-id {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* -----------------------------------------------
+   Alert/Issue Cell
+----------------------------------------------- */
+.alert-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alert-cell-type {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.alert-cell-type .icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+.alert-icon-red    { color: var(--color-status-red); }
+.alert-icon-amber  { color: var(--color-status-amber); }
+.alert-icon-blue   { color: var(--color-status-blue); }
+.alert-icon-green  { color: var(--color-status-green); }
+
+.alert-cell-detail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------
+   Action Cell (buttons)
+----------------------------------------------- */
+.action-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  min-width: 180px;
+}
+
+/* -----------------------------------------------
+   Last Activity Cell
+----------------------------------------------- */
+.last-activity-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.last-activity-time {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.last-activity-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------
+   Empty Table State
+----------------------------------------------- */
+.table-empty {
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+}
+
+.table-empty .icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-border-dark);
+  margin: 0 auto var(--space-3);
+  stroke-width: 1.25;
+}
+
+.table-empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.table-empty-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

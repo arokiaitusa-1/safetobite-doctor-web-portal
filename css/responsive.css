@@ -1,0 +1,330 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Responsive Styles
+   Desktop-first breakpoints
+   ============================================================ */
+
+/* -----------------------------------------------
+   Global Overflow & Viewport Guard
+----------------------------------------------- */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.page-content {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.table-wrapper,
+.appt-table-responsive,
+.rep-table-responsive,
+.alerts-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* -----------------------------------------------
+   Breakpoints:
+   lg:   1280px  (laptop)
+   md:   1024px  (small laptop / large tablet)
+   sm:    768px  (tablet)
+   xs:    480px  (small tablet)
+----------------------------------------------- */
+
+/* -----------------------------------------------
+   Large Desktop — 1280px and below
+----------------------------------------------- */
+@media (max-width: 1280px) {
+  :root {
+    --sidebar-width: 220px;
+    --page-padding: 24px;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid-2col {
+    grid-template-columns: 1fr 340px;
+  }
+
+  .welcome-greeting {
+    font-size: var(--font-size-2xl);
+  }
+
+  .welcome-quick-stat {
+    min-width: 70px;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .welcome-quick-stat-value {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* -----------------------------------------------
+   Medium — 1024px and below (small laptop)
+----------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: var(--space-4);
+  }
+
+  /* Auto-collapse sidebar */
+  .sidebar {
+    width: var(--sidebar-collapsed-width);
+    min-width: var(--sidebar-collapsed-width);
+  }
+
+  .sidebar .nav-label,
+  .sidebar .nav-badge,
+  .sidebar .sidebar-logo-text,
+  .sidebar .sidebar-doctor-info,
+  .sidebar .nav-section-label {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .sidebar .nav-link {
+    justify-content: center;
+    padding: var(--space-2);
+  }
+
+  /* Show tooltip on hover */
+  .sidebar .nav-item:hover .nav-tooltip {
+    display: block;
+  }
+
+  /* Manually expanded */
+  .sidebar.expanded {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+  }
+
+  .sidebar.expanded .nav-label,
+  .sidebar.expanded .nav-badge,
+  .sidebar.expanded .sidebar-logo-text,
+  .sidebar.expanded .sidebar-doctor-info,
+  .sidebar.expanded .nav-section-label {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+  }
+
+  .sidebar.expanded .nav-link {
+    justify-content: flex-start;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .dashboard-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid-3col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .welcome-actions {
+    flex-wrap: wrap;
+  }
+
+  /* Header search narrower */
+  .header-search-wrapper {
+    max-width: 300px;
+  }
+
+  /* Hide secondary header elements */
+  .header-profile-info {
+    display: none;
+  }
+
+  .header-profile-chevron {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------
+   Tablet — 768px and below
+----------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --page-padding: var(--space-3);
+    --header-height: 56px;
+  }
+
+  /* Sidebar overlays on tablet */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform var(--transition-panel);
+    z-index: var(--z-sidebar);
+    width: var(--sidebar-width) !important;
+    min-width: var(--sidebar-width) !important;
+  }
+
+  /* Show all sidebar content when open */
+  .sidebar .nav-label,
+  .sidebar .nav-badge,
+  .sidebar .sidebar-logo-text,
+  .sidebar .sidebar-doctor-info,
+  .sidebar .nav-section-label {
+    opacity: 1 !important;
+    width: auto !important;
+    overflow: visible !important;
+  }
+
+  .sidebar .nav-link {
+    justify-content: flex-start !important;
+    padding: var(--space-2) var(--space-3) !important;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger on tablet */
+  .header-sidebar-toggle {
+    display: flex;
+  }
+
+  /* Compact header */
+  .header-page-title {
+    display: none;
+  }
+
+  .header-search-wrapper {
+    max-width: 220px;
+    margin: 0 var(--space-2);
+  }
+
+  /* Summary cards 2-col */
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* Dashboard stacks */
+  .dashboard-grid-2col,
+  .dashboard-grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Welcome header compact */
+  .dashboard-welcome {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .welcome-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Tables: horizontally scrollable */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Patient quickview full-width on tablet */
+  .patient-quickview {
+    width: 100%;
+    border-left: none;
+  }
+
+  /* Notifications panel full-width-ish */
+  .notifications-panel {
+    right: var(--space-2);
+    left: var(--space-2);
+    width: auto;
+  }
+
+  /* Profile dropdown */
+  .profile-dropdown {
+    right: var(--space-2);
+  }
+}
+
+/* -----------------------------------------------
+   Small tablet / large phone — 480px
+----------------------------------------------- */
+@media (max-width: 480px) {
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+
+  .summary-card-value {
+    font-size: var(--font-size-4xl);
+  }
+
+  .header-search-wrapper {
+    max-width: 160px;
+  }
+
+  .header-search-kbd {
+    display: none;
+  }
+
+  /* Hide header profile info text */
+  .header-profile-btn .header-profile-info,
+  .header-profile-btn .header-profile-chevron {
+    display: none;
+  }
+
+  .welcome-greeting {
+    font-size: var(--font-size-2xl);
+  }
+
+  .welcome-quick-stat {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------
+   Print
+----------------------------------------------- */
+@media print {
+  .sidebar,
+  .app-header,
+  .patient-quickview,
+  .notifications-panel,
+  .profile-dropdown,
+  .search-dropdown {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .dashboard-grid-2col,
+  .dashboard-grid-3col {
+    grid-template-columns: 1fr !important;
+  }
+
+  .clinical-table thead {
+    position: static;
+  }
+}

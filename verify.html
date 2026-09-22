@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Safe2Bite Doctor Portal — Verify your identity.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Verify Identity — Safe2Bite Doctor Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+  <!-- ================================================
+       LEFT BRAND PANEL
+  ================================================ -->
+  <div class="auth-brand" aria-hidden="true">
+    <div class="auth-brand-deco-ring auth-brand-deco-ring-1"></div>
+    <div class="auth-brand-deco-ring auth-brand-deco-ring-2"></div>
+    <div class="auth-brand-deco-ring auth-brand-deco-ring-3"></div>
+
+    <div class="auth-brand-top">
+      <img
+        id="brand-logo"
+        src="https://arokiaitusa.com/wp-content/uploads/2026/09/Safe2Bite-Logo-blue-teal-300x108-1.png"
+        alt="Safe2Bite"
+        class="auth-brand-logo">
+      <div class="auth-brand-logo-fallback" id="brand-logo-fallback">
+        <div class="auth-brand-logo-fallback-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+        </div>
+        <span class="auth-brand-logo-fallback-text">Safe2Bite</span>
+      </div>
+    </div>
+
+    <div class="auth-brand-content">
+      <div class="auth-brand-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+        Identity Verification
+      </div>
+      <h1 class="auth-brand-heading">One more step to secure access</h1>
+      <p class="auth-brand-sub">
+        This additional verification step helps confirm your identity before granting access to protected clinical information.
+      </p>
+      <ul class="auth-brand-features" role="list">
+        <li class="auth-brand-feature">
+          <div class="auth-brand-feature-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+          </div>
+          Sent to your registered verification method
+        </li>
+        <li class="auth-brand-feature">
+          <div class="auth-brand-feature-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          Code expires after a short time
+        </li>
+        <li class="auth-brand-feature">
+          <div class="auth-brand-feature-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+          </div>
+          Placeholder for MFA/identity provider integration
+        </li>
+      </ul>
+    </div>
+
+    <div class="auth-brand-footer">
+      &copy; <span id="brand-year">2026</span> Safe2Bite &mdash; Texas Food Allergy Care
+    </div>
+  </div>
+
+  <!-- ================================================
+       RIGHT FORM PANEL
+  ================================================ -->
+  <div class="auth-form-panel" role="main">
+    <div class="auth-form-inner">
+
+      <!-- Mobile logo -->
+      <div class="auth-mobile-logo" aria-hidden="true">
+        <img src="https://arokiaitusa.com/wp-content/uploads/2026/09/Safe2Bite-Logo-blue-teal-300x108-1.png"
+             alt="Safe2Bite" style="width:160px;height:auto;">
+      </div>
+
+      <!-- Back link -->
+      <a href="login.html" class="auth-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Back to Sign In
+      </a>
+
+      <!-- Verification form -->
+      <div id="verify-form-section">
+
+        <div class="auth-form-header">
+          <h2 class="auth-form-title">Verify your identity</h2>
+          <p class="auth-form-subtitle" id="verify-subtitle">
+            Enter the 6-digit verification code sent to your registered authentication method.
+          </p>
+        </div>
+
+        <!-- Prototype notice -->
+        <div class="auth-alert auth-alert-info visible" role="note" style="margin-bottom:20px">
+          <span class="auth-alert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"/></svg>
+          </span>
+          <span>
+            <strong>Wireframe prototype.</strong> Enter any 6 digits to proceed. This screen is a placeholder for a real MFA or identity-provider integration.
+          </span>
+        </div>
+
+        <!-- Global error -->
+        <div id="verify-global-error" class="auth-alert auth-alert-error" role="alert" aria-live="assertive">
+          <span class="auth-alert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/></svg>
+          </span>
+          <span id="verify-error-text">Verification code is incorrect. Please try again.</span>
+        </div>
+
+        <form id="verify-form" novalidate>
+
+          <!-- OTP input grid -->
+          <div class="auth-otp-grid" id="otp-grid" role="group" aria-label="6-digit verification code">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-0" aria-label="Digit 1" autocomplete="one-time-code">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-1" aria-label="Digit 2">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-2" aria-label="Digit 3">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-3" aria-label="Digit 4">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-4" aria-label="Digit 5">
+            <input class="auth-otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" id="otp-5" aria-label="Digit 6">
+          </div>
+
+          <p class="auth-otp-hint">Enter the 6-digit code. Do not share this code with anyone.</p>
+
+          <button type="submit" id="verify-submit-btn" class="auth-btn" disabled>
+            <span class="auth-btn-spinner" aria-hidden="true"></span>
+            <span class="auth-btn-label">Verify &amp; Continue</span>
+          </button>
+
+        </form>
+
+        <!-- Resend code -->
+        <div class="auth-resend-wrap" aria-live="polite">
+          Didn't receive a code?
+          <button class="auth-resend-btn" id="resend-btn" disabled aria-label="Resend code">
+            Resend code
+          </button>
+          <span id="resend-timer-wrap">
+            in <span class="auth-resend-timer" id="resend-timer">0:30</span>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Success state -->
+      <div id="verify-success-section" class="auth-success-card" aria-live="polite">
+        <div class="auth-success-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+        </div>
+        <div class="auth-success-title">Identity verified</div>
+        <p class="auth-success-body">
+          Your identity has been confirmed. Redirecting you to the Safe2Bite care portal&hellip;
+        </p>
+        <div class="auth-btn-spinner" style="display:block;margin:0 auto 16px;border-color:rgba(21,101,192,0.2);border-top-color:#1565C0" aria-hidden="true"></div>
+      </div>
+
+      <div class="auth-form-footer">
+        <p>&copy; <span id="form-year">2026</span> Safe2Bite &mdash; Texas Food Allergy Care</p>
+        <p style="margin-top:6px;font-size:11px">
+          This verification screen is a wireframe placeholder.<br>
+          <!-- TODO(auth): Integrate real MFA/identity provider here -->
+          Real verification to be implemented by authorized development team.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      const yr = new Date().getFullYear();
+      document.getElementById('brand-year').textContent = yr;
+      document.getElementById('form-year').textContent  = yr;
+
+      const brandLogo = document.getElementById('brand-logo');
+      if (brandLogo) {
+        brandLogo.addEventListener('error', function () {
+          this.style.display = 'none';
+          const fb = document.getElementById('brand-logo-fallback');
+          if (fb) fb.style.display = 'flex';
+        });
+      }
+
+      /* ---- OTP input behavior ---- */
+      const otpInputs  = Array.from(document.querySelectorAll('.auth-otp-input'));
+      const submitBtn  = document.getElementById('verify-submit-btn');
+      const globalErr  = document.getElementById('verify-global-error');
+      const resendBtn  = document.getElementById('resend-btn');
+      const resendTimerEl  = document.getElementById('resend-timer');
+      const resendWrapEl   = document.getElementById('resend-timer-wrap');
+
+      /* Auto-advance and back-delete */
+      otpInputs.forEach((input, idx) => {
+        input.addEventListener('input', function () {
+          /* Only allow digits */
+          this.value = this.value.replace(/[^0-9]/g, '').slice(-1);
+          if (this.value) {
+            this.classList.add('filled');
+            if (idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
+          } else {
+            this.classList.remove('filled');
+          }
+          updateSubmitState();
+          clearError();
+        });
+
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Backspace' && !this.value && idx > 0) {
+            otpInputs[idx - 1].focus();
+            otpInputs[idx - 1].value = '';
+            otpInputs[idx - 1].classList.remove('filled');
+            updateSubmitState();
+          }
+          /* Arrow navigation */
+          if (e.key === 'ArrowLeft' && idx > 0)                       otpInputs[idx - 1].focus();
+          if (e.key === 'ArrowRight' && idx < otpInputs.length - 1)   otpInputs[idx + 1].focus();
+        });
+
+        /* Handle paste of full code */
+        input.addEventListener('paste', function (e) {
+          e.preventDefault();
+          const pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
+          pasted.split('').slice(0, 6).forEach((ch, i) => {
+            if (otpInputs[i]) {
+              otpInputs[i].value = ch;
+              otpInputs[i].classList.add('filled');
+            }
+          });
+          const next = Math.min(pasted.length, 5);
+          otpInputs[next].focus();
+          updateSubmitState();
+        });
+      });
+
+      function updateSubmitState() {
+        const allFilled = otpInputs.every(i => i.value !== '');
+        submitBtn.disabled = !allFilled;
+      }
+
+      function clearError() {
+        globalErr.classList.remove('visible');
+        otpInputs.forEach(i => i.classList.remove('has-error'));
+      }
+
+      /* ---- Resend timer ---- */
+      let secondsLeft = 30;
+
+      function startResendTimer() {
+        secondsLeft = 30;
+        resendBtn.disabled = true;
+        resendWrapEl.style.display = '';
+        updateTimerDisplay();
+
+        const interval = setInterval(function () {
+          secondsLeft--;
+          updateTimerDisplay();
+          if (secondsLeft <= 0) {
+            clearInterval(interval);
+            resendBtn.disabled = false;
+            resendWrapEl.style.display = 'none';
+          }
+        }, 1000);
+      }
+
+      function updateTimerDisplay() {
+        const m = Math.floor(secondsLeft / 60);
+        const s = secondsLeft % 60;
+        resendTimerEl.textContent = m + ':' + String(s).padStart(2, '0');
+      }
+
+      startResendTimer();
+
+      resendBtn.addEventListener('click', function () {
+        clearError();
+        otpInputs.forEach(i => { i.value = ''; i.classList.remove('filled'); });
+        otpInputs[0].focus();
+        submitBtn.disabled = true;
+        startResendTimer();
+        /* TODO(auth): Call POST /api/auth/mfa/resend */
+      });
+
+      /* ---- Form submit ---- */
+      function setLoading(on) {
+        submitBtn.disabled = on;
+        if (on) submitBtn.classList.add('loading');
+        else    submitBtn.classList.remove('loading');
+      }
+
+      document.getElementById('verify-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearError();
+
+        const code = otpInputs.map(i => i.value).join('');
+        if (code.length < 6) return;
+
+        setLoading(true);
+
+        /* Mock verify — wireframe accepts any 6 digits */
+        /* TODO(auth): Replace with POST /api/auth/mfa/verify */
+        setTimeout(function () {
+          setLoading(false);
+          /* Show success */
+          document.getElementById('verify-form-section').style.display = 'none';
+          document.getElementById('verify-success-section').classList.add('visible');
+          /* Redirect to portal after brief delay */
+          setTimeout(function () {
+            window.location.href = Auth.getPostLoginRedirect();
+          }, 1800);
+        }, 900);
+      });
+
+      /* Focus first input */
+      otpInputs[0].focus();
+
+    })();
+  </script>
+
+</body>
+</html>

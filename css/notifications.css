@@ -1,0 +1,247 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Notifications Panel
+   ============================================================ */
+
+/* -----------------------------------------------
+   Panel (dropdown from header)
+----------------------------------------------- */
+.notifications-panel {
+  position: fixed;
+  top: calc(var(--header-height) + 8px);
+  right: var(--space-4);
+  width: 380px;
+  max-height: calc(100vh - var(--header-height) - 32px);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-dropdown);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(-8px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+  transform-origin: top right;
+}
+
+.notifications-panel.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* -----------------------------------------------
+   Panel Header
+----------------------------------------------- */
+.notif-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.notif-panel-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.notif-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: var(--color-status-red);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+}
+
+.notif-mark-all-read {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.notif-mark-all-read:hover {
+  background: var(--color-primary-surface);
+}
+
+/* -----------------------------------------------
+   Notifications List
+----------------------------------------------- */
+.notif-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Notification item */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  position: relative;
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+}
+
+.notif-item:hover {
+  background: var(--color-surface);
+}
+
+.notif-item.unread {
+  background: #FAFCFF;
+}
+
+.notif-item.unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-primary);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* Notif icon */
+.notif-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.notif-icon .icon {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2;
+}
+
+.notif-icon-red    { background: var(--color-status-red-surface);    color: var(--color-status-red); }
+.notif-icon-amber  { background: var(--color-status-amber-surface);  color: var(--color-status-amber); }
+.notif-icon-blue   { background: var(--color-status-blue-surface);   color: var(--color-status-blue); }
+.notif-icon-green  { background: var(--color-status-green-surface);  color: var(--color-status-green); }
+.notif-icon-teal   { background: var(--color-teal-surface);          color: var(--color-teal); }
+.notif-icon-purple { background: var(--color-status-purple-surface); color: var(--color-status-purple); }
+
+/* Notif content */
+.notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.notif-item.unread .notif-title {
+  font-weight: var(--font-weight-semibold);
+}
+
+.notif-patient {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 3px;
+}
+
+.notif-time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.notif-unread-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* -----------------------------------------------
+   Panel Footer
+----------------------------------------------- */
+.notif-panel-footer {
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  flex-shrink: 0;
+  background: var(--color-surface);
+}
+
+.notif-view-all {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.notif-view-all:hover {
+  background: var(--color-primary-surface);
+}
+
+/* -----------------------------------------------
+   Empty state
+----------------------------------------------- */
+.notif-empty {
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+}
+
+.notif-empty .icon {
+  width: 36px;
+  height: 36px;
+  color: var(--color-border-dark);
+  margin: 0 auto var(--space-3);
+  stroke-width: 1.25;
+}
+
+.notif-empty-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.notif-empty-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

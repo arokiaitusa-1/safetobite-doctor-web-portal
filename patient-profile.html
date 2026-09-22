@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Safe2Bite Doctor Web Portal — Patient Clinical Overview">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Safe2Bite Doctor Portal — Patient Clinical Overview</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/alerts.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/patient-quickview.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/profile-menu.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/states.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/patients.css">
+</head>
+
+<body data-page="patients">
+
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation" aria-expanded="true">
+    <a href="index.html" class="sidebar-logo" aria-label="Safe2Bite Home">
+      <img
+        src="https://arokiaitusa.com/wp-content/uploads/2026/09/Safe2Bite-Logo-blue-teal-300x108-1.png"
+        alt="Safe2Bite Logo"
+        class="sidebar-logo-img">
+    </a>
+
+    <div class="sidebar-nav-wrap">
+      <div class="sidebar-section-label">Clinical Care</div>
+      <ul class="sidebar-nav" role="list">
+        <li>
+          <a href="index.html" class="sidebar-nav-item" data-nav="dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="icon"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="sidebar-nav-item active" data-nav="patients" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="icon"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+            <span class="nav-label">Patients</span>
+            <span class="nav-badge">128</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+
+    <!-- Top Header -->
+    <header class="header" role="banner">
+      <div class="header-left">
+        <div class="header-page-info">
+          <div class="header-page-name">Patient Clinical Overview</div>
+          <div class="header-page-sub">Clinical monitoring &amp; treatment history</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="index.html" class="btn-filter-clear" style="text-decoration:none">
+          &larr; Return to Portal
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content" id="page-content" role="main">
+      <div class="patient-profile-view">
+        
+        <!-- Back Link -->
+        <div>
+          <a href="index.html" class="profile-nav-back" style="text-decoration:none" aria-label="Back to patient directory">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+            &larr; Back to Patients Directory
+          </a>
+        </div>
+
+        <!-- Patient Profile Context Banner -->
+        <div class="patient-profile-banner">
+          <div class="profile-banner-left">
+            <div class="profile-banner-avatar avatar-color-0" aria-hidden="true">
+              SJ
+            </div>
+            <div class="profile-banner-info">
+              <div class="profile-banner-name-row">
+                <h1 class="profile-banner-name" id="profile-name">Sarah Johnson</h1>
+                <span class="patient-code-badge">SB-00124</span>
+                <span class="s2b-badge badge-treat-active">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="m4.5 12.75 6 6 9-13.5"/></svg>
+                  Active
+                </span>
+              </div>
+              <div class="profile-banner-meta">
+                <span class="profile-banner-meta-item">Age 8</span>
+                <span>&middot;</span>
+                <span class="profile-banner-meta-item">DOB: 04/12/2016</span>
+                <span>&middot;</span>
+                <span class="profile-banner-meta-item" style="color:var(--color-primary); font-weight:var(--font-weight-medium)">Peanut OIT — Phase 3</span>
+                <span>&middot;</span>
+                <span class="profile-banner-meta-item">Dr. Sarah Chen</span>
+              </div>
+            </div>
+          </div>
+          <div class="profile-banner-actions">
+            <a href="index.html" class="btn-profile-message" style="text-decoration:none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+              Message Patient
+            </a>
+          </div>
+        </div>
+
+        <!-- Sub-Navigation Tabs -->
+        <nav class="profile-tabs-bar" aria-label="Clinical Overview Sections">
+          <button type="button" class="profile-tab-item active">Overview</button>
+          <button type="button" class="profile-tab-item">Assessments <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Doses <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Reactions <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Illness <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Food Intake <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Treatment <span class="profile-tab-badge">Pass 4</span></button>
+          <button type="button" class="profile-tab-item">Timeline <span class="profile-tab-badge">Pass 4</span></button>
+        </nav>
+
+        <!-- Placeholder Section -->
+        <div class="profile-content-placeholder">
+          <div class="profile-pass4-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+            Pass 4 Construction Area
+          </div>
+          <h2 class="profile-placeholder-title">Patient Clinical Overview</h2>
+          <p class="profile-placeholder-desc">
+            The full Patient Clinical Overview will be built in <strong>PASS 4</strong>, including assessments, doses, reactions, illness reports, food intake logs, treatment protocol plans, and chronological timelines.
+          </p>
+
+          <div class="profile-preview-grid">
+            <div class="profile-preview-card">
+              <span class="preview-card-title">Treatment Protocol</span>
+              <span class="preview-card-val" style="color:var(--color-primary)">Peanut OIT</span>
+              <span class="preview-card-sub">Phase 3 Escalation</span>
+            </div>
+            <div class="profile-preview-card">
+              <span class="preview-card-title">30-Day Adherence</span>
+              <span class="preview-card-val" style="color:var(--color-status-green)">98.2%</span>
+              <span class="preview-card-sub">Recorded by caregiver</span>
+            </div>
+            <div class="profile-preview-card">
+              <span class="preview-card-title">Active Reaction Protocol</span>
+              <span class="preview-card-val">Standard Action Plan</span>
+              <span class="preview-card-sub">No acute reactions logged</span>
+            </div>
+            <div class="profile-preview-card">
+              <span class="preview-card-title">Next Office Visit</span>
+              <span class="preview-card-val">Sep 24, 2026</span>
+              <span class="preview-card-sub">10:30 AM &middot; In-Clinic Dose Review</span>
+            </div>
+          </div>
+
+          <div class="profile-safety-note">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/></svg>
+            <span>Healthcare Safety: Patient status and dosages represent recorded data only. Dosages are determined by authorized clinicians.</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+  // Auth guard
+  if (typeof Auth !== 'undefined' && !Auth.isAuthenticated()) {
+    Auth.redirectToLogin();
+  }
+</script>
+
+</body>
+</html>

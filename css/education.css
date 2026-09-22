@@ -1,0 +1,313 @@
+/* ==========================================================================
+   SAFE2BITE DOCTOR / CLINICAL WEB PORTAL
+   PASS 8 — EDUCATION & CLINICAL RESOURCES STYLES
+   ========================================================================== */
+
+.education-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+
+.education-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education-title-group h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin: 0 0 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-title-group p {
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+/* Toolbar & Filters */
+.education-toolbar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-xl);
+  padding: 18px 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.edu-toolbar-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.edu-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.edu-search-wrap .search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.edu-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0.75rem 0 2.25rem;
+  font-size: 0.825rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.edu-search-input:focus {
+  border-color: #0284c7;
+  box-shadow: var(--shadow-focus);
+}
+
+.edu-filter-select {
+  height: 40px;
+  padding: 0 0.85rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
+
+.edu-filter-select:focus {
+  border-color: #0284c7;
+  box-shadow: var(--shadow-focus);
+}
+
+.edu-counter-text {
+  font-size: 0.775rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Resources Cards Grid */
+.education-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.edu-resource-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-xl);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.edu-resource-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-border-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.edu-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edu-card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.edu-category-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.edu-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.edu-card-summary {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.edu-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+  font-size: 0.725rem;
+  color: #94a3b8;
+}
+
+.edu-audience-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+.edu-audience-badge.patient { color: #0284c7; }
+.edu-audience-badge.caregiver { color: #059669; }
+.edu-audience-badge.both { color: #7c3aed; }
+.edu-audience-badge.care-team { color: #d97706; }
+
+/* Status Badges */
+.edu-status-badge {
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  font-size: 0.675rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.edu-status-badge.published {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.edu-status-badge.draft {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.edu-status-badge.archived {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Modal: Resource Reader */
+.modal-education-reader-wrap {
+  width: 640px;
+  max-width: 95vw;
+}
+
+.edu-reader-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.edu-reader-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.775rem;
+  color: #64748b;
+}
+
+.edu-reader-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #334155;
+  white-space: pre-wrap;
+}
+
+/* Modal: Resource Editor */
+.modal-education-editor-wrap {
+  width: 600px;
+  max-width: 95vw;
+}
+
+.edu-form-group {
+  margin-bottom: 0.85rem;
+}
+
+.edu-form-group label {
+  display: block;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.edu-form-input,
+.edu-form-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.825rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.edu-form-textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.825rem;
+  line-height: 1.45;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.edu-form-input:focus,
+.edu-form-select:focus,
+.edu-form-textarea:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}

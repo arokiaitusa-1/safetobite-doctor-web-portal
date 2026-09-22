@@ -1,0 +1,219 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Global Search Dropdown
+   ============================================================ */
+
+/* -----------------------------------------------
+   Search Results Dropdown
+----------------------------------------------- */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-dropdown);
+  overflow: hidden;
+  max-height: 440px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-4px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.search-dropdown.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* -----------------------------------------------
+   Search Dropdown Header
+----------------------------------------------- */
+.search-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.search-query-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.search-query-label strong {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.search-result-count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------
+   Search Groups
+----------------------------------------------- */
+.search-results-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.search-group {
+  padding: var(--space-2) 0 0;
+}
+
+.search-group:last-child {
+  padding-bottom: var(--space-2);
+}
+
+.search-group-label {
+  padding: var(--space-1) var(--space-4) var(--space-1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+/* -----------------------------------------------
+   Search Result Item
+----------------------------------------------- */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.search-result-item:hover,
+.search-result-item.highlighted {
+  background: var(--color-primary-surface);
+}
+
+.search-result-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.search-result-icon .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.search-result-icon.icon-patient  { background: var(--color-primary-surface); color: var(--color-primary); }
+.search-result-icon.icon-alert    { background: var(--color-status-red-surface); color: var(--color-status-red); }
+.search-result-icon.icon-message  { background: var(--color-status-blue-surface); color: var(--color-status-blue); }
+
+.search-result-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-title mark {
+  background: var(--color-status-amber-surface);
+  color: var(--color-status-amber-dark);
+  border-radius: 2px;
+  padding: 0 2px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.search-result-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+.search-result-meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* -----------------------------------------------
+   Search divider between groups
+----------------------------------------------- */
+.search-group-divider {
+  height: 1px;
+  background: var(--color-divider);
+  margin: var(--space-2) 0;
+}
+
+/* -----------------------------------------------
+   Search footer / hint
+----------------------------------------------- */
+.search-dropdown-footer {
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--color-divider);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.search-hint-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------
+   No results state
+----------------------------------------------- */
+.search-no-results {
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.search-no-results .icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-border-dark);
+  margin: 0 auto var(--space-3);
+  stroke-width: 1.25;
+}
+
+.search-no-results-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.search-no-results-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

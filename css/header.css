@@ -1,0 +1,308 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Top Header
+   ============================================================ */
+
+/* -----------------------------------------------
+   Header Container
+----------------------------------------------- */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--header-height);
+  padding: 0 var(--page-padding);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: var(--header-shadow);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  flex-shrink: 0;
+}
+
+/* -----------------------------------------------
+   Mobile sidebar toggle (hamburger)
+----------------------------------------------- */
+.header-sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  background: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.header-sidebar-toggle:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+}
+
+.header-sidebar-toggle .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* -----------------------------------------------
+   Page Title (breadcrumb area)
+----------------------------------------------- */
+.header-page-title {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.header-page-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.header-page-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* -----------------------------------------------
+   Search Bar (Unified Healthcare Search)
+----------------------------------------------- */
+.header-search-wrapper {
+  flex: 1;
+  max-width: 460px;
+  position: relative;
+  margin: 0 var(--space-4);
+}
+
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--space-4) 0 42px;
+  font-size: var(--font-size-base);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  box-sizing: border-box;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.header-search-input:focus {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+  outline: none;
+}
+
+.header-search-icon {
+  position: absolute;
+  left: 14px;
+  width: 17px;
+  height: 17px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-search-kbd {
+  position: absolute;
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.header-search-input:focus ~ .header-search-kbd {
+  opacity: 0;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-family: inherit;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* -----------------------------------------------
+   Header Actions (right side)
+----------------------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+/* -----------------------------------------------
+   Header Action Button (notifications, messages)
+----------------------------------------------- */
+.header-action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  background: none;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.header-action-btn:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+}
+
+.header-action-btn.active {
+  background: var(--color-primary-surface);
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
+}
+
+.header-action-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Badge on action buttons */
+.header-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--color-status-red);
+  color: white;
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-white);
+  pointer-events: none;
+  letter-spacing: 0;
+}
+
+/* -----------------------------------------------
+   Header Divider
+----------------------------------------------- */
+.header-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border);
+  flex-shrink: 0;
+  margin: 0 var(--space-2);
+}
+
+/* -----------------------------------------------
+   Doctor Profile Button
+----------------------------------------------- */
+.header-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+  max-width: 200px;
+}
+
+.header-profile-btn:hover {
+  background: var(--color-surface-2);
+}
+
+.header-profile-btn.active {
+  background: var(--color-primary-surface);
+  border-color: var(--color-primary-border);
+}
+
+.header-profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.header-profile-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  text-align: left;
+}
+
+.header-profile-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.header-profile-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-profile-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.header-profile-btn.active .header-profile-chevron {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,489 @@
+/* ============================================================
+   Safe2Bite Doctor Web Portal — Clinical Directory Sections CSS
+   Shared styles for Assessments, Doses, Reactions, Illness,
+   and Food Intake section views.
+   ============================================================ */
+
+/* -----------------------------------------------
+   Wrapper
+----------------------------------------------- */
+.section-directory-wrapper {
+  padding: 1.5rem 1.75rem 2.5rem;
+  max-width: 1400px;
+}
+
+/* -----------------------------------------------
+   Section Header
+----------------------------------------------- */
+.section-dir-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-dir-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.section-dir-title .icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.section-dir-sub {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* -----------------------------------------------
+   KPI Row
+----------------------------------------------- */
+.section-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-kpi-card {
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.15s ease;
+}
+
+.section-kpi-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section-kpi-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-primary, #0284c7);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.section-kpi-label {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* KPI color variants */
+.section-kpi-card.kpi-green .section-kpi-value { color: #059669; }
+.section-kpi-card.kpi-amber .section-kpi-value { color: #d97706; }
+.section-kpi-card.kpi-red   .section-kpi-value { color: #dc2626; }
+.section-kpi-card.kpi-green { border-color: #d1fae5; background: #f0fdf4; }
+.section-kpi-card.kpi-amber { border-color: #fde68a; background: #fffbeb; }
+.section-kpi-card.kpi-red   { border-color: #fecaca; background: #fef2f2; }
+
+/* -----------------------------------------------
+   Tab Bar (Doses)
+----------------------------------------------- */
+.section-tab-bar {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border-light, #e2e8f0);
+  padding-bottom: 0;
+}
+
+.section-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #64748b);
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.section-tab:hover {
+  color: var(--color-primary, #0284c7);
+}
+
+.section-tab.active {
+  color: var(--color-primary, #0284c7);
+  border-bottom-color: var(--color-primary, #0284c7);
+}
+
+/* -----------------------------------------------
+   Filter Bar
+----------------------------------------------- */
+.section-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.section-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+  max-width: 380px;
+}
+
+.section-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.section-search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.3rem;
+  font-size: 0.825rem;
+  font-family: inherit;
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 7px;
+  background: var(--color-bg-card, #ffffff);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.section-search-input:focus {
+  border-color: var(--color-primary, #0284c7);
+  box-shadow: 0 0 0 3px rgba(2,132,199,0.1);
+}
+
+.section-filter-select {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 7px;
+  background: var(--color-bg-card, #ffffff);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.section-filter-select:focus {
+  border-color: var(--color-primary, #0284c7);
+}
+
+.section-results-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------
+   Table Card
+----------------------------------------------- */
+.section-table-card {
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.section-dir-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.815rem;
+}
+
+.section-dir-table thead tr {
+  background: var(--color-bg-subtle, #f8fafc);
+  border-bottom: 1px solid var(--color-border-light, #e2e8f0);
+}
+
+.section-dir-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.section-dir-table td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-border-light, #f1f5f9);
+  color: var(--color-text-primary);
+}
+
+.section-dir-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.section-dir-table tbody tr {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.section-dir-table tbody tr:hover {
+  background: var(--color-bg-hover, #f8fafc);
+}
+
+/* -----------------------------------------------
+   Patient Cell
+----------------------------------------------- */
+.asmt-patient-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.asmt-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.asmt-patient-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 0.825rem;
+}
+
+.asmt-patient-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+
+.asmt-type-label {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.asmt-date-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.asmt-date {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.asmt-time {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.asmt-wellness-cell {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--color-text-primary);
+}
+
+.asmt-symptoms {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+
+.asmt-careteam {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary, #475569);
+}
+
+/* -----------------------------------------------
+   Action Button
+----------------------------------------------- */
+.asmt-action-btn {
+  background: none;
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary, #0284c7);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.asmt-action-btn:hover {
+  background: var(--color-primary-light, #e0f2fe);
+  border-color: var(--color-primary, #0284c7);
+}
+
+/* -----------------------------------------------
+   Assessment Status Badges
+----------------------------------------------- */
+.asmt-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.asmt-badge-completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.asmt-badge-review {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.asmt-badge-pending {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.asmt-badge-missing {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* -----------------------------------------------
+   Dose Status Badges
+----------------------------------------------- */
+.dose-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dose-badge-taken     { background: #dcfce7; color: #15803d; }
+.dose-badge-missed    { background: #fee2e2; color: #b91c1c; }
+.dose-badge-not-taken { background: #fef9c3; color: #a16207; }
+.dose-badge-upcoming  { background: #dbeafe; color: #1d4ed8; }
+
+/* -----------------------------------------------
+   Reaction / Illness Badges (shared)
+----------------------------------------------- */
+.rxn-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rxn-sev-critical   { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.rxn-sev-high       { background: #ffedd5; color: #c2410c; }
+.rxn-sev-medium     { background: #fef9c3; color: #a16207; }
+.rxn-sev-low        { background: #dcfce7; color: #15803d; }
+
+.rxn-status-new      { background: #fee2e2; color: #b91c1c; }
+.rxn-status-open     { background: #dbeafe; color: #1d4ed8; }
+.rxn-status-review   { background: #fef9c3; color: #a16207; }
+.rxn-status-resolved { background: #dcfce7; color: #15803d; }
+.rxn-status-dismissed { background: #f1f5f9; color: #64748b; }
+
+.ill-status-new      { background: #fee2e2; color: #b91c1c; }
+.ill-status-open     { background: #dbeafe; color: #1d4ed8; }
+.ill-status-review   { background: #fef9c3; color: #a16207; }
+.ill-status-resolved { background: #dcfce7; color: #15803d; }
+
+/* -----------------------------------------------
+   Food Intake: dose note
+----------------------------------------------- */
+.fi-dose-note {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------
+   Safety Note
+----------------------------------------------- */
+.section-safety-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #0c4a6e;
+  line-height: 1.5;
+}
+
+.section-safety-note svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: #0284c7;
+}
+
+/* -----------------------------------------------
+   Responsive
+----------------------------------------------- */
+@media (max-width: 1100px) {
+  .section-kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-directory-wrapper {
+    padding: 1rem;
+  }
+  .section-kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .section-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .section-search-wrap {
+    max-width: none;
+  }
+  .section-results-label {
+    margin-left: 0;
+  }
+  .section-dir-table th:nth-child(n+4),
+  .section-dir-table td:nth-child(n+4) {
+    display: none;
+  }
+}
